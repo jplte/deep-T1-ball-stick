@@ -83,17 +83,11 @@ if __name__ == '__main__':
     dataset3 = np.load(path+"dataset3.npz")
     dataset4 = np.load(path+"dataset4.npz")
     dataset5 = np.load(path+"dataset5.npz")
-    dmipy_fit1 = np.load(path+"dmipy_fit1.npz")
-    dmipy_fit2 = np.load(path+"dmipy_fit2.npz")
-    dmipy_fit3 = np.load(path+"dmipy_fit3.npz")
-    dmipy_fit4 = np.load(path+"dmipy_fit4.npz")
-    dmipy_fit5 = np.load(path+"dmipy_fit1.npz")
+
 
     dataset_dict = {"1": dataset1, "2": dataset2, "3": dataset3, "4": dataset4, "5": dataset5}
-    dmipy_fit_dict = {"1": dmipy_fit1, "2": dmipy_fit2, "3": dmipy_fit3, "4": dmipy_fit4, "5": dmipy_fit5}
     
     trainset = dataset_dict[str(args.trainset)]
-    dmipy_fit = dmipy_fit_dict[str(args.trainset)]
     if args.prenormalised == 'no':
         X_train = trainset['X_train_raw']
     else: X_train = trainset['X_train_normalised']
